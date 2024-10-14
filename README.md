@@ -120,7 +120,7 @@ Para ejecutar la aplicación, sigue estos pasos:
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/RegistroMascotas.git
+   git clone https://github.com/mbarrientos7/UAA-PAPDM-Grupo-3-TP-1.git
    ```
 
 2. Abre el proyecto en Android Studio.

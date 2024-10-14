@@ -46,7 +46,8 @@ fun ListaMascotas(mascotas: List<Mascota>, onEliminarMascota: (Mascota) -> Unit)
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(8.dp),
-                elevation = CardDefaults.cardElevation(4.dp)
+                elevation = CardDefaults.cardElevation(4.dp),
+                colors = CardDefaults.cardColors(MaterialTheme.colorScheme.surface)
             ) {
                 Column(
                     modifier = Modifier
@@ -56,6 +57,7 @@ fun ListaMascotas(mascotas: List<Mascota>, onEliminarMascota: (Mascota) -> Unit)
                     Text(
                         text = mascota.nombre,
                         style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
+                        color = MaterialTheme.colorScheme.onSurface,
                         modifier = Modifier
                             .padding(bottom = 8.dp)
                             .align(Alignment.CenterHorizontally)
@@ -66,14 +68,14 @@ fun ListaMascotas(mascotas: List<Mascota>, onEliminarMascota: (Mascota) -> Unit)
                             .padding(bottom = 8.dp),
                         horizontalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        item { Text(text = "Especie: ", fontWeight = FontWeight.Bold) }
-                        item { Text(text = mascota.especie) }
-                        item { Text(text = "Raza: ", fontWeight = FontWeight.Bold) }
-                        item { Text(text = mascota.raza) }
-                        item { Text(text = "Edad: ", fontWeight = FontWeight.Bold) }
-                        item { Text(text = "${mascota.edad} años") }
-                        item { Text(text = "Peso: ", fontWeight = FontWeight.Bold) }
-                        item { Text(text = "${mascota.peso} kg") }
+                        item { Text(text = "Especie: ", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) }
+                        item { Text(text = mascota.especie, color = MaterialTheme.colorScheme.onSurface) }
+                        item { Text(text = "Raza: ", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) }
+                        item { Text(text = mascota.raza, color = MaterialTheme.colorScheme.onSurface) }
+                        item { Text(text = "Edad: ", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) }
+                        item { Text(text = "${mascota.edad} años", color = MaterialTheme.colorScheme.onSurface) }
+                        item { Text(text = "Peso: ", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) }
+                        item { Text(text = "${mascota.peso} kg", color = MaterialTheme.colorScheme.onSurface) }
                     }
 
                     CargarImagenDesdeUrl(fotoUrl = mascota.fotoUrl)
@@ -85,13 +87,14 @@ fun ListaMascotas(mascotas: List<Mascota>, onEliminarMascota: (Mascota) -> Unit)
                             .align(Alignment.End)
                             .padding(top = 16.dp)
                     ) {
-                        Text("Eliminar")
+                        Text("Eliminar", color = MaterialTheme.colorScheme.onError)
                     }
                 }
             }
         }
     }
 }
+
 
 @Composable
 fun CargarImagenDesdeUrl(fotoUrl: String) {
